@@ -1,9 +1,10 @@
 
-.hide {
-    display: none;
-  }
-  
-  .show {
-    display: block;
-  }
+.container {
+  width: 80%;
+  font-family: 'Raleway', sans-serif;
+}
+
+.btn {
+    margin: 5px;
+}
   

@@ -1,14 +1,13 @@
 //current page is set to zero to match with array value
 var currentPage = 0;
 var correct = 0;
+var count = 0;
 var myQuiz = [
-    ["Question 1", "A 123", "B 345", "C 456", "D hello", "A 123"],
-    ["Question 2", "Ayooo", "Boo", "Code", "Dude", "Boo"],
-    ["Question 3", "A", "B", "C", "D", "D"],
-    ["Question 4", "A", "B", "C", "D", "A"]
+    ["Question 1 -  Decode the following ASCII URL code: %50%55%50%50%59", "hands", "PUPPY", "HELLO", "DOGS", "PUPPY"],
+    ["Question -  You're in 3rd place right now. What place are you in when you pass the person in 2nd place?", "1st", "2nd", "3rd", "last", "2nd"],
+    ["Question 3 - Divide 30 by half and add ten.", "15", "25", "50", "70", "70"],
+    ["Question 4 - What month of the year has 28 days?", "February", "February and June", "All", "None", "All"]
 ]
-
-var scores = [];
 
 // 3 different pages of the quiz 
 var startPage = document.getElementById("quizStart");
@@ -24,7 +23,7 @@ function beginQuiz(){
     quizPages.classList.remove("hide");
 
     //on click function start timer 
-    var count = 150;
+    count = 150;
     var interval = setInterval(function(){
     document.getElementById('count').innerHTML=count;
     count--;
@@ -77,31 +76,67 @@ function checkScore(){
     console.log(`Scored ${correct}`)
 }
 
+// var users = [];
+// var scores = [];
+
 function completeQuiz(){
     quizPages.classList.add("hide");
     quizPages.classList.remove("show");
     resultsPage.classList.add("show");
     resultsPage.classList.remove("hide");
 
-    init();
+    var score = Number(count);
+    console.log(score);
+    var timeTaken = 150-count;
+    document.getElementById("finalScore").innerHTML=`<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4">YAY!</h1>
+      <p class="lead">You have completed the quiz! You scored ${correct} correctly and finished the quiz in ${timeTaken} seconds!</p>
+    </div>
+    </div>`
+   
 
-    var scoresList = document.querySelector(".results");
 
-    function renderScores() {
-        // Clear scores element 
-        scoresList.innerHTML = "";
+
+
+    // scoresForm.addEventListener("submit", function(event) {
+    //     event.preventDefault();
+    //     debugger;
       
-        // Render a new li for each todo
-        for (var i = 0; i < scores.length; i++) {
-          var scores = scores[i];
+    //     var initials = initials.value.trim();
       
-          var li = document.createElement("li");
-          li.textContent = scores;
-          li.setAttribute("data-index", i);
+    //     // Return from function early if submitted todoText is blank
+    //     if (initials === "") {
+    //       return;
+    //     }
+      
+    //     // Add new todoText to todos array, clear the input
+    //     users.push(initials);
+    //     initials.value = "";
 
-          todoList.appendChild(li);
-        }
-      }
+    //     init();
+      
+    //   });
+    
+
+    // var scoresList = document.querySelector(".results");
+
+    // function renderScores() {
+    //     // Clear scores element 
+    //     scoresList.innerHTML = "";
+      
+    //     // Render a new li for each score
+    //     for (var i = 0; i < scores.length; i++) {
+    //       var scores = scores[i];
+    //       var initials = users[i];
+      
+    //       var li1 = document.createElement("li");
+    //       li1.textContent = scores;
+    //       var li2 = document.createElement("li");
+    //       li2.textContent = users;
+
+    //     }
+    //   }
 
     function init() {
         // Get stored scores from localStorage

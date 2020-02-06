@@ -6,24 +6,23 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
 
 
     <title>Coding Quiz</title>
 </head>
 <body>
     <style>
-
-    .container {
-        width: 80%
-    }
-
     .hide {
         display: none;
     }
   
     .show {
         display: block;
-    }
+        margin: 15px;
+   }
+
         
     </style>
     
@@ -39,31 +38,49 @@
                 <h2 id="quizHeader"></h2>
             </div>
             <div id="questions" class="row">
-                <div class = "col-sm-6">
-                    <a data-id="1" class="btn btn-primary answer"></a>
+                <div class = "col-sm-5 btn btn-info"">
+                    <a data-id="1" class="btn btn-info answer"></a>
                 </div>
-                <div class = "col-sm-6">
-                    <a data-id="2" class="btn btn-primary answer"></a>
+                <div class = "col-sm-5 btn btn-info">
+                    <a data-id="2" class="btn btn-info answer"></a>
                 </div>
-                <div class = "col-sm-6">
-                    <a data-id="3" class="btn btn-primary answer"></a>
+                <div class = "col-sm-5 btn btn-info">
+                    <a data-id="3" class="btn btn-info answer"></a>
                 </div>
-                <div class = "col-sm-6">
-                    <a data-id="4" class="btn btn-primary answer"></a>
+                <div class = "col-sm-5 btn btn-info">
+                    <a data-id="4" class="btn btn-info answer"></a>
                 </div>
             </div>
+            <div id="count">Start</div>
         </div>
         <div id="quizComplete" class="hide">
-            <form id="todo-form" method="POST">
+            <div id="finalScore">
+            </div>
+            <!-- <form id="scoresForm" method="POST">
                 <label for="initialsLabel">Add your Initials:</label>
                 <input type="text" placeholder="Type Initials Here" name="initials" id="initials" />
             </form>
 
-            <ul id="results"></ul>
-        </div>
+            <table class="table">
+                <thead>
+                  <tr>
+                    The scope attribute specifies that this is a header for a column -->
+                    <!-- <th scope="col">Time</th>
+                    <th scope="col">Initials</th>
+                  </tr>
+                </thead>
+                <tbody id="myTable">
+                </tbody>
+              </table>
+
+            <ul id="results">
+                <li id ="displayTime"></li>
+                <li id ="displayInitials"></li>
+            </ul>
+        </div> -->
         
        
-        <div id="count">Start</div>
+
     </div>
     <script src="script.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
